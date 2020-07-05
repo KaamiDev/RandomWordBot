@@ -9,8 +9,6 @@ var T = new Twit({
 	strictSSL: true
 });
 
-module.exports = () => {
-	T.post('statuses/update', { status: 'My first tweet!' }, function(err, data, response) {
-		console.log(data);
-	});
+module.exports = (image) => {
+	T.post('statuses/update', { status: 'My first tweet!' }, function(err, data, response) {});
 };
