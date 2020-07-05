@@ -24,7 +24,7 @@ module.exports = (word, number) => {
 		if (err) throw err;
 		svg2img(svgString, function(error, buffer) {
 			//returns a Buffer
-			fs.writeFileSync('images/' + word + '.png', buffer);
+			fs.writeFileSync('images/' + word + '.txt', 'data:image/png;base64,' + buffer.toString('base64'));
 		});
 	});
 };
