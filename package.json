@@ -1,19 +1,19 @@
 {
-  "name": "random-word-bot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.19.2",
-    "cron": "^1.8.2",
-    "dotenv": "^8.2.0",
-    "svg2img": "^0.7.0",
-    "twit": "^2.2.11"
-  }
+	"name": "random-word-bot",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^0.19.2",
+		"cron": "^1.8.2",
+		"dotenv": "^8.2.0",
+		"svg2img": "^0.7.0",
+		"twit": "^2.2.11"
+	}
 }
