@@ -1,0 +1,16 @@
+{
+  "name": "random-word-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "svg2img": "^0.7.0",
+    "twit": "^2.2.11"
+  }
+}
