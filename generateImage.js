@@ -1,4 +1,3 @@
-var fs = require('fs');
 var svg2img = require('svg2img');
 
 module.exports = (word, number) => {
@@ -20,11 +19,5 @@ module.exports = (word, number) => {
       </g>
     </svg>`;
 
-	fs.mkdir('./images', { recursive: true }, (err) => {
-		if (err) throw err;
-		svg2img(svgString, function(error, buffer) {
-			//returns a Buffer
-			fs.writeFileSync('images/' + word + '.txt', 'data:image/png;base64,' + buffer.toString('base64'));
-		});
-	});
+	return 'data:image/png;base64,' + buffer.toString('base64');
 };
