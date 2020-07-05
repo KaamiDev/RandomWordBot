@@ -1,3 +1,4 @@
+var fs = require('fs');
 var svg2img = require('svg2img');
 
 module.exports = (word, number) => {
@@ -19,5 +20,7 @@ module.exports = (word, number) => {
       </g>
     </svg>`;
 
-	return 'data:image/png;base64,' + buffer.toString('base64');
+	svg2img(svgString, function(error, buffer) {
+		return 'data:image/png;base64,' + buffer.toString('base64');
+	});
 };
