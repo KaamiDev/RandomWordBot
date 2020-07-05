@@ -11,7 +11,6 @@ var T = new Twit({
 
 module.exports = (image, word) => {
 	T.post('media/upload', { media_data: image }, function(err, data, response) {
-		console.log(data);
 		var mediaIdStr = data.media_id_string;
 		var meta_params = { media_id: mediaIdStr };
 
@@ -20,7 +19,7 @@ module.exports = (image, word) => {
 				var params = { status: `Today's word: ${word}`, media_ids: [ mediaIdStr ] };
 
 				T.post('statuses/update', params, function(err, data, response) {
-					console.log(data);
+					console.log('Tweeted Successfully. Word was ' + word);
 				});
 			} else {
 				console.log(err);
