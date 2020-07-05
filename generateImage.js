@@ -22,6 +22,6 @@ module.exports = (word) => {
     </svg>`;
 
 	svg2img(svgString, function(error, buffer) {
-		tweetImg('data:image/png;base64,' + buffer.toString('base64'));
+		tweetImg(buffer.toString('base64'), word);
 	});
 };

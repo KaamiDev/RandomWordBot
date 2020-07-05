@@ -9,6 +9,22 @@ var T = new Twit({
 	strictSSL: true
 });
 
-module.exports = (image) => {
-	T.post('statuses/update', { status: 'My first tweet!' }, function(err, data, response) {});
+module.exports = (image, word) => {
+	T.post('media/upload', { media_data: image }, function(err, data, response) {
+		console.log(data);
+		var mediaIdStr = data.media_id_string;
+		var meta_params = { media_id: mediaIdStr };
+
+		T.post('media/metadata/create', meta_params, function(err, data, response) {
+			if (!err) {
+				var params = { status: `Today's word: ${word}`, media_ids: [ mediaIdStr ] };
+
+				T.post('statuses/update', params, function(err, data, response) {
+					console.log(data);
+				});
+			} else {
+				console.log(err);
+			}
+		});
+	});
 };
