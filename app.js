@@ -1,4 +1,7 @@
 require('dotenv').config();
 const generateImg = require('./generateImage');
+const getWord = require('./getWord');
 
-generateImg('EPICeijdMAN');
+getWord().then((word) => {
+	generateImg(word);
+});
