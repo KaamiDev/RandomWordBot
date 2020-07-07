@@ -16,7 +16,7 @@ module.exports = (image, word) => {
 
 		T.post('media/metadata/create', meta_params, function(err, data, response) {
 			if (!err) {
-				var params = { status: `Today's word: ${word}`, media_ids: [ mediaIdStr ] };
+				var params = { status: `New word: ${word}`, media_ids: [ mediaIdStr ] };
 
 				T.post('statuses/update', params, function(err, data, response) {
 					console.log('Tweeted Successfully. Word was ' + word);
