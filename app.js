@@ -5,10 +5,10 @@ const getWord = require('./getWord');
 const CronJob = require('cron').CronJob;
 
 console.log('Cron job Staring...');
-const job = new CronJob('0 * * * *', function() {
+const job = new CronJob('*/5 * * * *', function() {
 	getWord().then((word) => {
 		generateImg(word);
 	});
 });
-console.log('Cron job Started. Every 1 hour.');
+console.log('Cron job Started. Every 5 minutes.');
 job.start();
